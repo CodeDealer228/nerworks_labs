@@ -61,6 +61,17 @@
      "cap": "Рисунок 5 — Файл mtr_itmo.txt"
     }
    ]
+  },
+  {
+   "h": "Артефакт 3. Определение протокола mtr (ответ на вопрос 1)",
+   "text": "Во время работы mtr на c7-1 запущен tcpdump с фильтром icmp: перехвачены ICMP echo request и echo reply между 10.0.2.16 и 51.250.116.144 (адрес www.itmo.ru), то есть mtr по умолчанию использует ICMP.",
+   "code": "tcpdump -ni enp0s3 -c 6 icmp &\nmtr -rwc 3 www.itmo.ru",
+   "imgs": [
+    {
+     "img": "shots/p2_proto.png",
+     "cap": "Рисунок 6 — tcpdump во время работы mtr"
+    }
+   ]
   }
  ]
 }
