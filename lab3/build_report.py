@@ -44,8 +44,8 @@ for a in R.get("artifacts",[]):
     for im in a.get("imgs",[]): shot(im["img"],im["cap"])
 if R.get("answers"):
     d.add_paragraph("Ответы на вопросы и задания",style="Heading 1")
-    for i,x in enumerate(R["answers"],1):
-        para(f"{i}. {x['q']}",11,True); para(x["a"])
+    for x in sorted(R["answers"],key=lambda x:x["n"]):
+        para(f"{x['n']}. {x['q']}",11,True); para(x["a"])
 if R.get("conclusion"):
     d.add_paragraph("Вывод",style="Heading 1"); para(R["conclusion"])
 d.save(OUT); print("saved",OUT)
